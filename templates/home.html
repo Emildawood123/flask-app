@@ -31,6 +31,11 @@
     font-family: sans-serif;
     color: rgb(80, 80, 80);
   }
+  .jop-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 </style>
 <body>
   <div class="container">
@@ -46,7 +51,17 @@
     remaining essentially unchanged.
   </p>
   <h2>jop openings</h2>
-  <p>TODO - show the jops here</p>
+  {% for jop in jops %}
+    <div class="jop-container">
+      <div>
+      <p><span class="fw-bold">title</span>: {{ jop.jop }}</p>
+      <p><span class="fw-bold">location</span>: {{ jop.location }}</p>
+      <p><span class="fw-bold">salary</span>: {{jop.sallary }}</p>
+      </div>
+      <button class="btn btn-outline-primary btn-md">apply</button>
+    </div>
+    <hr>
+  {% endfor %}
     <div style="text-align: center;">
       <button class="btn btn-primary btn-lg">Content Us</button>
       <p class="mt-4">copy right 2024, emil</p>
